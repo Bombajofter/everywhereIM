@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style = "--background: white;">
+    <ion-title class="ion-text-center">
+      <img src="/assets/icon/everywhere1.png" width="250px" height="125px" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<hr>
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-list>
+      <ion-list-header>
+        <h1>Gebruikers:</h1>
+      </ion-list-header>
+
+      <ion-item *ngFor = "let user of users; let i = index;">
+        <ion-grid>
+        <ion-row>
+            <ion-label>{{user.id}}: </ion-label>
+          <div style = "background-color: {{user.kleuren[0].kleur}}; width: 30px; height: 30px;">
+          </div>
+            <ion-button (click) = "user.visible = !user.visible">
+              v
+            </ion-button>
+            <ion-button *ngIf = "user.visible" (click) = "changeOrder(i)">
+              <ion-icon slot = "icon-only" name = "refresh"> </ion-icon>
+            </ion-button>
+          </ion-row>
+          <ion-row *ngIf = "user.visible">
+            <ion-item lines = "none" *ngFor = "let kleur of user.kleuren | slice:1 let i = index">
+              <div style = "background-color: {{kleur.kleur}}; width: 30px; height: 30px;">
+              </div>
+            </ion-item>
+          </ion-row>
+          </ion-grid>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+</ion-content>

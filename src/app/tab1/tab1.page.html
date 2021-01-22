@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style = "--background: white;">
+    <ion-title class="ion-text-center">
+      <img src="/assets/icon/everywhere1.png" width="250px" height="125px" alt="">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row *ngFor = "let kleur of kleuren">
+      <ion-col style="background-color: {{kleur.kleur}}; height: 300px;">
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

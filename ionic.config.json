@@ -1,0 +1,7 @@
+{
+  "name": "ColorsIM",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
